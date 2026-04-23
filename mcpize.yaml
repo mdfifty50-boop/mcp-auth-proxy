@@ -1,0 +1,9 @@
+version: 1
+runtime: node
+build:
+  install: npm install
+startCommand:
+  type: stdio
+  command: node
+  args:
+    - src/index.js

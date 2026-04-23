@@ -1,0 +1,80 @@
+{
+  "serverInfo": {
+    "name": "mcp-auth-proxy",
+    "version": "0.1.0",
+    "description": "Production-ready authentication, rate limiting, and audit logging for any MCP server. 38% of MCP servers have zero authentication — this fixes that in one line.",
+    "author": "THRONE AI",
+    "license": "MIT",
+    "homepage": "https://github.com/mdfifty50-boop/mcp-auth-proxy",
+    "repository": "https://github.com/mdfifty50-boop/mcp-auth-proxy"
+  },
+  "capabilities": {
+    "tools": [
+      {
+        "name": "create_api_key",
+        "description": "Generate a new API key with optional tool permissions, rate limits, and expiry"
+      },
+      {
+        "name": "revoke_api_key",
+        "description": "Immediately disable an existing API key"
+      },
+      {
+        "name": "list_api_keys",
+        "description": "Show all active API keys and their usage statistics"
+      },
+      {
+        "name": "validate_request",
+        "description": "Check if an incoming request is authorized — the core gate used by protected MCP servers"
+      },
+      {
+        "name": "get_audit_log",
+        "description": "Retrieve the access audit trail, filterable by key, tool, and time range"
+      },
+      {
+        "name": "set_rate_limit",
+        "description": "Configure rate limits globally or per key (minute/hour/day windows)"
+      },
+      {
+        "name": "check_health",
+        "description": "Health check: uptime, request counters, blocked rate, active key count"
+      },
+      {
+        "name": "configure_cors",
+        "description": "Set allowed origins and credentials policy for HTTP-based MCP access"
+      }
+    ],
+    "resources": [
+      {
+        "uri": "auth://dashboard",
+        "description": "Real-time dashboard: active keys, recent requests, rate limit status"
+      },
+      {
+        "uri": "auth://threats",
+        "description": "Detected security threats: brute force attempts, expired keys, rotation alerts"
+      }
+    ]
+  },
+  "categories": ["security", "authentication", "developer-tools", "infrastructure"],
+  "keywords": [
+    "mcp", "authentication", "api-key", "rate-limiting", "audit-log", "rbac",
+    "security", "mcp-server", "model-context-protocol", "ai-agent"
+  ],
+  "pricing": {
+    "free_tier": true,
+    "free_limit": "Fully open-source, unlimited keys, self-hosted",
+    "starter": "$29/month — hosted, 10 keys, analytics dashboard",
+    "pro": "$99/month — hosted, unlimited keys, SSO, webhook alerts",
+    "enterprise": "Custom — SLA, on-prem deployment, SOC2 compliance"
+  },
+  "install": {
+    "npm": "npx mcp-auth-proxy",
+    "claude_desktop": {
+      "mcpServers": {
+        "mcp-auth-proxy": {
+          "command": "npx",
+          "args": ["mcp-auth-proxy"]
+        }
+      }
+    }
+  }
+}
