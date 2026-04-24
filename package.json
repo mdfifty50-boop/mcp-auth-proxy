@@ -1,6 +1,6 @@
 {
   "name": "agentic-auth-proxy-mcp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "mcpName": "io.github.mdfifty50-boop/mcp-auth-proxy",
   "repository": {
     "type": "git",
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
+    "@x402/mcp": "^2.10.0",
     "better-sqlite3": "^12.9.0",
     "zod": "^3.24.0"
   }
